@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "643508141084",
+    "project_id": "modile-77666",
+    "storage_bucket": "modile-77666.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643508141084:android:9d21de34e36d4e692a33d9",
+        "android_client_info": {
+          "package_name": "com.example.seed_snap_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643508141084-pgb9j409b20vq82q24ltto2juee5t3ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8XQqXlGJseAV7GpCXQuYqo2UigD1kxMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643508141084-pgb9j409b20vq82q24ltto2juee5t3ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
