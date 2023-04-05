@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "643508141084",
-    "project_id": "modile-77666",
-    "storage_bucket": "modile-77666.appspot.com"
+    "project_number": "217150615471",
+    "project_id": "seeds-cfe4a",
+    "storage_bucket": "seeds-cfe4a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:643508141084:android:9d21de34e36d4e692a33d9",
+        "mobilesdk_app_id": "1:217150615471:android:09747770bf20d10063495a",
         "android_client_info": {
           "package_name": "com.example.seed_snap_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "643508141084-pgb9j409b20vq82q24ltto2juee5t3ku.apps.googleusercontent.com",
+          "client_id": "217150615471-j38dmpq89hlfm4h7s1gre6ed2c8ua9qh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC8XQqXlGJseAV7GpCXQuYqo2UigD1kxMQ"
+          "current_key": "AIzaSyClhSzo0nNQCPMF0NUjcrazcByZYM9hAKk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "643508141084-pgb9j409b20vq82q24ltto2juee5t3ku.apps.googleusercontent.com",
+              "client_id": "217150615471-j38dmpq89hlfm4h7s1gre6ed2c8ua9qh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
