@@ -1,10 +1,11 @@
-// import 'package:SignUp/constants/home.dart';
+// Import necessary packages and files
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_signin/constants/home.dart';
 import 'package:flutter/material.dart';
 import '../reusable_widgets/reusable_widget.dart';
 import '../utils/color_utils.dart';
 
+// Create a StatefulWidget for the ResetPassword screen
 class ResetPassword extends StatefulWidget {
   const ResetPassword({Key? key}) : super(key: key);
 
@@ -12,8 +13,9 @@ class ResetPassword extends StatefulWidget {
   _ResetPasswordState createState() => _ResetPasswordState();
 }
 
+// Create the corresponding State class for the ResetPassword screen
 class _ResetPasswordState extends State<ResetPassword> {
-   TextEditingController _emailTextController = TextEditingController();
+   TextEditingController _emailTextController = TextEditingController();   // Controller for the email text field
    
   
 
@@ -22,8 +24,8 @@ class _ResetPasswordState extends State<ResetPassword> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation:0,
+        backgroundColor: Colors.transparent,  // Set the app bar's background color as transparent
+        elevation:0,    // Remove app bar's shadow
         title: const Text(
           "Reset Password",
           style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),
@@ -35,7 +37,7 @@ class _ResetPasswordState extends State<ResetPassword> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              hexStringToColor("28B463"),
+              hexStringToColor("28B463"),   // Define gradient colors
               hexStringToColor("239B56"),
               hexStringToColor("58D68D"),
             ],
@@ -45,22 +47,20 @@ class _ResetPasswordState extends State<ResetPassword> {
         ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20,120,20,0),
+            padding: EdgeInsets.fromLTRB(20,120,20,0),  // Set padding for the content
             child: Column(
               children: <Widget>[
-                // logoWidget("assets/images/logo_transparent.png"),
                 const SizedBox(height: 10,
                 ),
-                reusableTextField("Enter Email", Icons.email_outlined, false, _emailTextController),
+                reusableTextField("Enter Email", Icons.email_outlined, false, _emailTextController),  // Reusable text field for entering email
                 const SizedBox(height: 20,
                 ),
                firebaseButton(context, "Reset Password", (){
+                // Firebase button to reset the user's password
                 FirebaseAuth.instance
                 .sendPasswordResetEmail(email: _emailTextController.text)
-                .then((value) => Navigator.of(context).pop());
-
+                .then((value) => Navigator.of(context).pop()); // Send password reset email and pop the current screen
                })
-      
               ],
             ),
           ),

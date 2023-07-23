@@ -1,3 +1,4 @@
+// Import necessary packages and files
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_signin/constants/reset_password.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +17,9 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,7 @@ class _SignInScreenState extends State<SignInScreen> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
+            gradient: LinearGradient(colors: [          //background color
               hexStringToColor("28B463"),
               hexStringToColor("239B56"),
               hexStringToColor("58D68D")
@@ -36,43 +37,33 @@ class _SignInScreenState extends State<SignInScreen> {
               20, MediaQuery.of(context).size.height * 0.2, 20, 0),
               child: Column(
                 children: <Widget>[
-                  logoWidget("assets/images/logo_transparent.png"),
+                  logoWidget("assets/images/logo_transparent.png"),    // Placeholder for logo image
                   const SizedBox(
                     height: 30,
                   ),
-                  reusableTextField("Enter UserName", Icons.person_outline, false, _emailTextController),
+                  reusableTextField("Enter UserName", Icons.person_outline, false, _emailTextController),     // Text field for entering username
                   const SizedBox(
                     height: 20,
                   ),
-                  reusableTextField("Enter Password", Icons.lock_outline, true, _passwordTextController),
+                  reusableTextField("Enter Password", Icons.lock_outline, true, _passwordTextController),     // Text field for entering password
                   const SizedBox(
                     height: 5,
                   ),
-                  forgetPassword(context),
-                  firebaseButton(context, "Sign In", (){
+                  forgetPassword(context),    // "Forgot Password?" link
+                  firebaseButton(context, "Sign In", (){    // Sign in button
+                  // Function to sign in using Firebase authentication
                     FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailTextController.text, password: _passwordTextController.text)
                     .then((value) {
+                  // If sign-in is successful, navigate to the HomeScreen
                       Navigator.push(context, 
                       MaterialPageRoute(builder: (context)=> HomeScreen()));
                     }).onError((error, stackTrace) {
+                  // If there's an error during sign-in, print the error message
                       print("Error ${error.toString()}");
-                    });
-                    
-                    
+                    }); 
                   }),
+                  // "Don't have an account? Sign Up" link
                   signUpOption()
-                  // ElevatedButton(
-                  //   child: Text("If you Don't have an account? Sign Up"), 
-                  //   onPressed: () {
-                  //     Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
-                  //   },
-                  // ),
-                  // ElevatedButton(
-                  //   child: Text("Sign In"),
-                  //   onPressed: () {
-                  //     Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                  //   },
-                  // ),
                 ],
               )
           ),
@@ -81,6 +72,8 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
+
+//create function for sign up button 
   Row signUpOption(){
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -102,7 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 
 
-
+//create function for reset password option
   Widget forgetPassword(BuildContext context){
     return Container(
       width: MediaQuery.of(context).size.width,
